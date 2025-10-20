@@ -1,0 +1,3 @@
+function go-dash {
+    Set-Location "C:\Users\drndm\OneDrive\Desktop\React Projects\Custom Dashboard"
+}
