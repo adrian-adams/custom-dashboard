@@ -8,8 +8,8 @@ import { getNavCard } from "/services/navService";
 const NavResIcon = ({navCardItem, userRole}) => {
   return ( 
     <>
-      <div className={`group relative flex flex-row items-center rounded-md w-[50px] ${userRole === "admin" ? "hover:w-[100px]" : ""}  hover:bg-green-700 transition-all delay-150 duration-400 ease-in-out`}>
-        <div className='w-12.5 rounded-md group-hover:p-1 transition-all duration-400 ease-in-out'>
+      <div className={`group relative flex flex-row items-center rounded-md w-[50px] ${userRole === "admin" ? "hover:w-[100px] hover:bg-green-700" : "hover:scale-115 hover:opacity-75"} transition-all  duration-400 ease-in-out`}>
+        <div className={`w-12.5 rounded-md ${userRole === "admin" ? "group-hover:p-1" : ""} transition-all duration-400 ease-in-out`}>
           <a  
             key={navCardItem.key} 
             href={navCardItem.url} 
@@ -77,18 +77,18 @@ export const NavList = ({userRole}) => {
   
   return (
     <>
-        <div className='flex flex-wrap justify-center md:justify-start items-center gap-3 md:gap-4.5 w-full md:w-7/12'>
-            <SidebarTrigger />
-            {userRole === "admin" && (
-                <NavAdd /> 
-              )
-            }
-            {navCard.sort((a,b) => a.title.localeCompare(b.title)).map((navCardItem) => (
-              <div key={navCardItem.id}>
-                <NavResIcon key={navCardItem.id} navCardItem={navCardItem} userRole={userRole} />
-              </div>)
-            )}
-        </div>
+      <div className='flex flex-wrap justify-center md:justify-start items-center gap-3 md:gap-4.5 w-full md:w-7/12'>
+        <SidebarTrigger />
+        {userRole === "admin" && (
+            <NavAdd /> 
+          )
+        }
+        {navCard.sort((a,b) => a.title.localeCompare(b.title)).map((navCardItem) => (
+          <div key={navCardItem.id}>
+            <NavResIcon key={navCardItem.id} navCardItem={navCardItem} userRole={userRole} />
+          </div>)
+        )}
+      </div>
     </>
   )
 }
