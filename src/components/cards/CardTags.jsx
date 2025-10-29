@@ -22,7 +22,7 @@ const cardTagList = [
   "Security", "SEO", "Portfolio", "Template", "Theme", "Media", 
   "Testing", "DevOps", "Cloud", "Game Dev", "Git", "PDF", "JSON", 
   "AI", "Hosting", "Google", "FEM", "Image Library", "Icon Library", 
-  "UTM", "Bitly", "CSV", "BE", "FE", "Fullstack", "Images"
+  "UTM", "Bitly", "CSV", "BE", "FE", "Fullstack", "Images", "GIF"
 ]
 
 const sortedList = cardTagList.sort();
